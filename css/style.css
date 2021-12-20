@@ -1,0 +1,280 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  /* Colors */
+  --primaryColor: #70bdf2;
+  --secondaryColor: #c1e3ff;
+  --thirdColor: #153f65;
+  --textDrak: #03131f;
+  --textLinght: #edf4fe;
+  /* Font */
+  --bigFont: 3.2rem;
+  --mediumFont: 1.8rem;
+  --pFont: 0.95rem;
+}
+
+body {
+  color: var(--textDrak);
+}
+
+*::selection {
+  color: var(--secondaryColor);
+  background: var(--primaryColor);
+}
+
+section {
+  padding: 50px 10%;
+}
+
+/*-------------------------------- HEADER -------------------------------------*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s;
+  padding: 20px 100px;
+  z-index: 100000;
+  background-color: var(--primaryColor);
+}
+
+header .logo {
+  position: relative;
+  font-weight: 700;
+  color: var(--textLinght);
+  text-decoration: none;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.4s;
+}
+
+header ul {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul li {
+  position: relative;
+}
+
+header ul li a {
+  position: relative;
+  margin: 0 15px;
+  text-decoration: none;
+  color: var(--textLinght);
+  letter-spacing: 1px;
+  font-weight: 500;
+  transition: 0.4s;
+}
+
+header .sticky {
+  padding: 20px 100px;
+  background: var(--textDrak);
+}
+
+header .sticky .logo,
+header .sticky ul li a {
+  color: var(--textLinght);
+}
+
+#menu-icon {
+  font-size: 24px;
+  color: var(--textLinght);
+  cursor: pointer;
+  z-index: 1001;
+  display: none;
+}
+
+#dark-mode-icon {
+  font-size: 22px;
+  color: var(--textLinght);
+  cursor: pointer;
+  padding: 0px 10px;
+}
+
+/*--------------------------------- HOME -----------------------------*/
+.home {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--primaryColor);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+.home-img {
+  order: 2;
+}
+
+.home-img img {
+  width: 100%;
+}
+
+.home-text span {
+  font-size: var(--mediumFont);
+  font-weight: 500px;
+}
+
+.home-text h1 {
+  font-size: var(--bigFont);
+  font-weight: 600;
+}
+
+.home-text h2 {
+  font-size: var(--mediumFont);
+  font-weight: 400;
+}
+
+.home-text p {
+  font-size: var(--pFont);
+  font-weight: 400;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 4rem;
+  left: 19%;
+}
+
+.scroll-down a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: var(--textLinght);
+}
+
+.scroll-down .fas {
+  color: var(--textLinght);
+  font-size: 20px;
+}
+
+.scroll-down span {
+  font-size: 20px;
+  padding: 2px 15px;
+}
+
+/*---------------------------------- ABOUT --------------------------------*/
+.about {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--secondaryColor);
+}
+
+.about1 {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  margin-bottom: 150px;
+  padding-top: 50px;
+}
+
+.about1 span {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  color: var(--thirdColor);
+  display: inline-block;
+  font-family: "Poppins";
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.about1 h3 {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+/* mbagi 2 blok grid */
+.about1 .about_inner {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 0.8fr 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* about left */
+.about1 .left {
+  width: 90%;
+  height: auto;
+}
+
+
+/* about right */
+.about1 .right {
+  width: 90%;
+  height: auto;
+  padding-left: 50px;
+}
+
+.about1 .right .about_title {
+  margin-bottom: 30px;
+}
+
+.about1 .right .about_title h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.about1 .right .about_title h3 .arlo_tm_animation_text_word {
+  color: rgb(95, 131, 230);
+}
+
+.about1 .right .text {
+  margin-bottom: 23px;
+  float: left;
+}
+
+.about1 .right .text span {
+  color: var(--primaryColor);
+  font-style: italic;
+}
+
+/*------------------------------- SKILLS ------------------------------------*/
+.skills {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--thirdColor);
+}
+
+/*------------------------------- PORTOFOLIO ------------------------------------*/
+.portofolio {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--secondaryColor);
+}
+
+/*------------------------------- CONTACT ------------------------------------*/
+.contact {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--textLinght);
+}
