@@ -1,2 +1,2 @@
 # ReadMe
-Lihat All brach
+Lihat All branch untuk melihat versi perkembangan
