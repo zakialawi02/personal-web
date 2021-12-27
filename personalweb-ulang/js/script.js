@@ -15,10 +15,26 @@ $(document).bind('contextmenu', function (e) {
   alert('Right Click  is not allowed !!!');
   e.preventDefault();
 });
+// inspect not allowed
+document.onkeydown = function (e) {
+  if (event.keyCode == 123) {
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+    alert('Function is not allowed !!!');
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+    alert('Function is not allowed !!!');
+    return false;
+  }
+  if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+    alert('Function is not allowed !!!');
+    return false;
+  }
+}
 
-// 
-
-// /////////// spanLogoBerubahWarna
+// /////////// Stiky Header  dan spanLogoBerubahWarna
 $(document).ready(function () {
 
   $('#menu').click(function () {
@@ -31,12 +47,16 @@ $(document).ready(function () {
     $('#menu').removeClass('fa-times');
     $('.navbar').removeClass('nav-toggle');
 
-    if ($(window).scrollTop() > 80) {
+    if ($(window).scrollTop() > 20) {
       $('header').addClass('sticky');
+    } else {
+      $('header').removeClass('sticky');
+    }
+
+    if ($(window).scrollTop() > 100) {
       $('header .logo .C1').addClass('spanLogoBerubahWarna');
       $('header .logo .C2').addClass('spanLogoBerubahWarna');
     } else {
-      $('header').removeClass('sticky');
       $('header .logo .C1').removeClass('spanLogoBerubahWarna');
       $('header .logo .C2').removeClass('spanLogoBerubahWarna');
 
@@ -145,25 +165,25 @@ new TypeIt("#type2", {
 gsap.from("header", {
   opacity: 0,
   duration: 1,
-  delay: .7,
+  delay: 1,
   y: -50
 });
 gsap.from(".home-text h3", {
   opacity: 0,
   duration: 1,
-  delay: 1.2,
+  delay: 1.5,
   y: -50
 });
 gsap.from(".home-text h1", {
   opacity: 0,
   duration: 1,
-  delay: 1.8,
+  delay: 2,
   y: -45
 });
 gsap.from(".home-text h4", {
   opacity: 0,
   duration: 1,
-  delay: 2.2,
+  delay: 2.5,
   y: -30
 });
 gsap.from(".home-text p", {
@@ -185,6 +205,12 @@ gsap.from(".home-img", {
   y: 50
 });
 
+gsap.from(".darkModeToggle", {
+  opacity: 0,
+  duration: 1,
+  delay: 4,
+  x: 50
+});
 
 // ----------------------- Gallery filter
 //selecting all required elements
