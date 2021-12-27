@@ -5,7 +5,7 @@
     --primaryColor: #4BB4DE;
     --secondaryColor: #A2E2F8;
     --thirdColor: #345DA7;
-    --fourthColor: #345DA7;
+    --fourth: #345DA7;
     --textDrak: #0d2136;
     --textLinght: #edf4fe;
     /* Font */
@@ -16,12 +16,12 @@
 
 .darkMode {
     /* Colors */
-    --primaryColor: #1b2d48;
-    --secondaryColor: #3c649f;
-    --thirdColor: #83aff0;
-    --fourthColor: #1e1e2c;
-    --textDrak: #A2E2F8;
-    --textLinght: #edf4fe;
+    --primaryColor: #023246;
+    --secondaryColor: #287094;
+    --thirdColor: #001336;
+    --fourth: #cedfdf;
+    --textDrak: #ffffff;
+    --textLinght: #F6F6F6;
 }
 
 * {
@@ -225,11 +225,12 @@ section {
     top: 14rem;
     right: 0;
     z-index: 1000;
+
     border-radius: 1rem 0 0 1rem;
     padding: 0.6rem 1rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .4);
     cursor: pointer;
-    background-color: var(--secondaryColor);
+    background-color: var(--textLinght);
     text-align: center;
 }
 
@@ -246,7 +247,6 @@ section {
 }
 
 .darkModeToggle .D2.darkModeSimbol {
-    color: rgb(255, 209, 4);
     display: inline-block;
 }
 
@@ -429,7 +429,7 @@ header.sticky {
     text-align: center;
     line-height: 50px;
     border-radius: 5px;
-    color: var(--textLinght);
+    color: var(--textDrak);
     cursor: pointer;
     box-shadow:
         -3px -3px 5px 0 var(--secondaryColor),
@@ -514,6 +514,7 @@ header.sticky {
     text-align: justify;
     line-height: 2;
     margin-bottom: 2rem;
+    color: #333;
 }
 
 .right .detail-data-container {
@@ -946,7 +947,7 @@ ul .speech.active {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background-color: var(--fourthColor);
+    background-color: var(--thirdColor);
 }
 
 h1.heading-title {
