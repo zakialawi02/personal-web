@@ -80,6 +80,7 @@ section {
     font-weight: 700;
 }
 
+/* Preloader */
 .preloader {
     position: fixed;
     top: 0;
@@ -97,6 +98,7 @@ section {
     left: 0;
     right: 0;
     margin: auto;
+    justify-content: center;
     text-align: center;
     width: 100%;
     height: 100px;
@@ -661,6 +663,58 @@ a.btn:active {
     100% {
         transform: scale(1);
     }
+}
+
+
+.web-hover {
+    position: relative;
+}
+
+.web-hover .btn-web {
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.web-hover:hover .btn-web {
+    opacity: 1;
+}
+
+a.btn-web {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: var(--thirdColor);
+    color: var(--textLinght);
+    border-radius: 0.8rem;
+    border: 2px solid var(--thirdColor);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    transition: all 300ms ease-in-out;
+    font-size: 1.3rem;
+    letter-spacing: 0.2rem;
+}
+
+a.btn-web:hover {
+    background-color: var(--textLinght);
+    color: var(--textDrak);
+}
+
+a.btn-web::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.3s ease;
+    pointer-events: none;
+}
+
+a.btn-web:active {
+    transform: translateY(0px);
 }
 
 /*  */
