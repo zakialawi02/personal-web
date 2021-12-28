@@ -104,18 +104,18 @@ $(document).ready(function () {
 });
 
 // ================= Preloader
-// var loader = document.getElementById("preloader");
-// window.addEventListener("load", function () {
-//   loader.style.display = "none";
-// });
+var loader = document.getElementById("preloader");
+window.addEventListener("load", function () {
+  loader.style.display = "none";
+});
 $(window).on('load', function () {
 
   /*======== Preloader Setup ========*/
   $(".loading-text").delay(1000).fadeOut("slow");
   $(".preloader").delay(2000).fadeOut("slow");
 
-
 });
+
 //---------------------------- typingg....
 new TypeIt("#type1", {
     speed: 120,
@@ -371,9 +371,7 @@ function disableDarkMode() {
 if (darkMode === "enabled") {
   enableDarkMode();
 }
-
 // Listeners
-
 const darkModeToggle1 = document.querySelector("#darkModeToggle");
 darkModeToggle1.addEventListener("click", () => {
   darkMode = localStorage.getItem("darkMode");
