@@ -408,10 +408,10 @@ header.sticky {
 }
 
 .home .home-img .img-box {
-    max-width: 35rem;
+    max-width: 40rem;
     display: block;
     margin: auto;
-    padding: 15px;
+    padding: 1rem;
 }
 
 .home .home-img .img-box img {
@@ -1453,8 +1453,7 @@ form input.btn-contact:hover {
     }
 
     .home .home-img .img-box {
-        max-width: 30rem;
-        padding: 10px;
+        max-width: 35rem;
     }
 
     .home .colom {
