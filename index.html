@@ -385,15 +385,17 @@
                     <h2>Message me</h2>
 
                     <!-- versi 2 -->
-                    <form action="mail.php" method="POST" autocomplete="off" class="form" id="myForm">
+                    <form action="mail.php" method="POST" autocomplete="off" class="form" id="myForm" name="myform">
                         <div>
-                            <input type="text" placeholder="Your Name" name="name" id="name" />
-                            <input type="email" placeholder="Your Email" name="email" id="email" />
+                            <input type="text" placeholder="Your Name" name="name" id="name" required />
+                            <input type="email" placeholder="Your Email" name="email" id="email" required />
                         </div>
-                        <input type="text" placeholder="Subject" name="judul" id="judul" />
-                        <textarea cols="10" rows="10" placeholder="Your Message" name="message" id="message"></textarea>
+                        <input type="text" placeholder="Subject" name="judul" id="judul" required />
+                        <textarea cols="10" rows="10" placeholder="Your Message" name="message" id="message"
+                            required></textarea>
 
                         <input class="btn-contact" type="submit" value="Submit">
+                        <h4 class="sent-notification"></h4>
 
                     </form>
 
@@ -454,42 +456,8 @@
 
 
     <!-- working contact form [ga di pakek]-->
-    <script type="text/javascript">
-        function sendEmail() {
-            var name = $("#name");
-            var email = $("#email");
-            var subject = $("#subject");
-            var body = $("#body");
 
-            if (isNotEmpty(name) && isNotEmpty(email) && isNotEmpty(subject) && isNotEmpty(body)) {
-                $.ajax({
-                    url: 'sendEmail.php',
-                    method: 'POST',
-                    dataType: 'json',
-                    data: {
-                        name: name.val(),
-                        email: email.val(),
-                        subject: subject.val(),
-                        body: body.val()
-                    },
-                    success: function (response) {
-                        $('#myForm')[0].reset();
-                        $('.sent-notification').text("Message Sent Successfully.");
-                    }
-                });
-            }
-        }
 
-        function isNotEmpty(caller) {
-            if (caller.val() == "") {
-                caller.css('border', '1px solid red');
-                return false;
-            } else
-                caller.css('border', '');
-
-            return true;
-        }
-    </script>
     <!-- AOS -->
     <!--aos bikin ngebug-->
     <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
