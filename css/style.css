@@ -681,6 +681,7 @@ a.btn:active {
 }
 
 .web-hover:hover .btn-web {
+    transform: translate(-50%, -50%);
     opacity: 1;
 }
 
@@ -927,73 +928,6 @@ ul .speech.active {
     pointer-events: none;
 }
 
-/*=======================  ==========================*/
-/* .doctor {
-    background: url(../images/background-img.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-.doctor .box-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.doctor .box-container .box {
-    border-radius: .5rem;
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
-    padding: 1rem;
-    margin: 1.5rem;
-    text-align: center;
-    background: #fff;
-    border: .1rem solid rgba(0, 0, 0, .1);
-    width: 33rem;
-}
-
-.doctor .box-container .box img {
-    margin: 1rem;
-    border-radius: 50%;
-    height: 20rem;
-    width: 20rem;
-    object-fit: cover;
-    background: var(--primaryColor);
-}
-
-.doctor .box-container .box h3 {
-    font-size: 2rem;
-    color: var(--primaryColor);
-}
-
-.doctor .box-container .box span {
-    font-size: 1.5rem;
-    color: var(--thirdColor);
-}
-
-.doctor .box-container .box .share {
-    border-top: .1rem solid rgba(0, 0, 0, .1);
-    padding: 1rem;
-    margin-top: 1rem;
-}
-
-.doctor .box-container .box .share a {
-    border-radius: 50%;
-    height: 4.5rem;
-    width: 4.5rem;
-    line-height: 4.5rem;
-    font-size: 2rem;
-    margin: .4rem;
-    background: #eee;
-    color: var(--primaryColor);
-}
-
-.doctor .box-container .box .share a:hover {
-    background: var(--primaryColor);
-    color: #fff;
-    transform: rotate(360deg);
-} */
 
 /*========================= CONTACT ====================*/
 .contact {
