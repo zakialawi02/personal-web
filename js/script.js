@@ -1,38 +1,38 @@
 // dont right click copy cut
-$(document).bind('copy', function (e) {
-  alert('Copy is not allowed !!!');
-  e.preventDefault();
-});
-$(document).bind('paste', function () {
-  alert('Paste is not allowed !!!');
-  e.preventDefault();
-});
-$(document).bind('cut', function () {
-  alert('Cut  is not allowed !!!');
-  e.preventDefault();
-});
-$(document).bind('contextmenu', function (e) {
-  alert('Right Click  is not allowed !!!');
-  e.preventDefault();
-});
-// inspect not allowed
-document.onkeydown = function (e) {
-  if (event.keyCode == 123) {
-    return false;
-  }
-  if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-    alert('Function is not allowed !!!');
-    return false;
-  }
-  if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-    alert('Function is not allowed !!!');
-    return false;
-  }
-  if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-    alert('Function is not allowed !!!');
-    return false;
-  }
-}
+// $(document).bind('copy', function (e) {
+//   alert('Copy is not allowed !!!');
+//   e.preventDefault();
+// });
+// $(document).bind('paste', function () {
+//   alert('Paste is not allowed !!!');
+//   e.preventDefault();
+// });
+// $(document).bind('cut', function () {
+//   alert('Cut  is not allowed !!!');
+//   e.preventDefault();
+// });
+// $(document).bind('contextmenu', function (e) {
+//   alert('Right Click  is not allowed !!!');
+//   e.preventDefault();
+// });
+// // inspect not allowed
+// document.onkeydown = function (e) {
+//   if (event.keyCode == 123) {
+//     return false;
+//   }
+//   if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+//     alert('Function is not allowed !!!');
+//     return false;
+//   }
+//   if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+//     alert('Function is not allowed !!!');
+//     return false;
+//   }
+//   if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+//     alert('Function is not allowed !!!');
+//     return false;
+//   }
+// }
 
 // /////////// Stiky Header  dan spanLogoBerubahWarna
 $(document).ready(function () {
