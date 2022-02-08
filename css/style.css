@@ -416,6 +416,77 @@ header.sticky {
 
 .home .home-img .img-box img {
     width: 100%;
+    animation: floatingImg 5s linear infinite;
+}
+
+@keyframes floatingImg {
+
+    100%,
+    0% {
+        transform: translateY(0rem);
+    }
+
+    50% {
+        transform: translateY(-1.1rem);
+    }
+
+}
+
+.welcome-thumb-1,
+.welcome-thumb-2,
+.welcome-thumb-3,
+.welcome-thumb-4 {
+    position: absolute;
+}
+
+.welcome-thumb-1 {
+    top: 65%;
+    right: 70%;
+    max-width: 10%;
+}
+
+.welcome-thumb-2 {
+    top: 5%;
+    right: 23%;
+    max-width: 14%;
+}
+
+.welcome-thumb-3 {
+    top: 50%;
+    right: 20%;
+    max-width: 7%;
+}
+
+.home .home-img .img-box .welcome-thumb-1 .welcome-animation {
+    z-index: 100;
+    position: relative;
+    animation: bounceHero 4s ease-in-out infinite;
+}
+
+.home .home-img .img-box .welcome-thumb-2 .welcome-animation {
+    z-index: 100;
+    position: relative;
+    animation: bounceHero 6s ease-in infinite;
+}
+
+.home .home-img .img-box .welcome-thumb-3 .welcome-animation {
+    z-index: 100;
+    position: relative;
+    animation: bounceHero 8s ease-in-out infinite;
+}
+
+@keyframes bounceHero {
+    0% {
+        top: 0rem;
+    }
+
+    50% {
+        top: 3rem;
+    }
+
+    100% {
+        top: 0rem;
+    }
 }
 
 .sosial-media {
@@ -928,6 +999,73 @@ ul .speech.active {
     pointer-events: none;
 }
 
+/*=======================  ==========================*/
+/* .doctor {
+    background: url(../images/background-img.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.doctor .box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.doctor .box-container .box {
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    padding: 1rem;
+    margin: 1.5rem;
+    text-align: center;
+    background: #fff;
+    border: .1rem solid rgba(0, 0, 0, .1);
+    width: 33rem;
+}
+
+.doctor .box-container .box img {
+    margin: 1rem;
+    border-radius: 50%;
+    height: 20rem;
+    width: 20rem;
+    object-fit: cover;
+    background: var(--primaryColor);
+}
+
+.doctor .box-container .box h3 {
+    font-size: 2rem;
+    color: var(--primaryColor);
+}
+
+.doctor .box-container .box span {
+    font-size: 1.5rem;
+    color: var(--thirdColor);
+}
+
+.doctor .box-container .box .share {
+    border-top: .1rem solid rgba(0, 0, 0, .1);
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.doctor .box-container .box .share a {
+    border-radius: 50%;
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    font-size: 2rem;
+    margin: .4rem;
+    background: #eee;
+    color: var(--primaryColor);
+}
+
+.doctor .box-container .box .share a:hover {
+    background: var(--primaryColor);
+    color: #fff;
+    transform: rotate(360deg);
+} */
 
 /*========================= CONTACT ====================*/
 .contact {
@@ -1160,6 +1298,128 @@ form input.btn-contact:hover {
     }
 
 }
+
+
+
+/* ============================ Detail Resume ====================== */
+.resm {
+    position: relative;
+    background-color: var(--primaryColor);
+}
+
+.resm-container {
+    max-width: 1140px;
+    margin: auto;
+}
+
+.resm .colom {
+    align-items: top;
+    margin-top: 5rem;
+    min-height: 100vh;
+}
+
+.resm .resm-text {
+    color: var(--textLinght);
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 15px;
+}
+
+.resm-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 1rem;
+}
+
+.resm-section.is-active {
+    display: block;
+    animation: fadeIn 0.6s both;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translatey(40px);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.resm-timeline {
+    margin-top: 30px;
+    position: relative;
+}
+
+.resm-timeline:after {
+    background: linear-gradient(to top, var(--textDrak) 0%, var(--thirdColor) 100%);
+    content: "";
+    left: 42px;
+    width: 2px;
+    top: 0;
+    height: 100%;
+    position: absolute;
+    content: "";
+}
+
+.resm-item {
+    position: relative;
+    padding-left: 60px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    z-index: 1;
+}
+
+.resm-item:last-child {
+    padding-bottom: 5px;
+}
+
+.resm-item:after {
+    content: attr(data-year);
+    width: 10px;
+    position: absolute;
+    top: 0;
+    left: 37px;
+    font-weight: 500;
+    width: 8px;
+    height: 8px;
+    line-height: 0.6;
+    border: 2px solid var(--secondaryColor);
+    font-size: 13px;
+    text-indent: -35px;
+    border-radius: 50%;
+    color: var(--textLinght);
+    background: linear-gradient(to bottom, var(--thirdColor) 0%, var(--primaryColor) 100%);
+}
+
+.resm-item-title {
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.resm-item-desc {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--textLinght);
+    line-height: 1.5;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
