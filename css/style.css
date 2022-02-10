@@ -1331,6 +1331,11 @@ form input.btn-contact:hover {
     margin-top: 1rem;
 }
 
+div.solid-line {
+    border-bottom: 3px solid var(--secondaryColor);
+    width: 25%;
+}
+
 .resm-section.is-active {
     display: block;
     animation: fadeIn 0.6s both;
@@ -1552,6 +1557,15 @@ form input.btn-contact:hover {
 
     .home .colom {
         margin-top: 0rem;
+    }
+
+    .resm .resm-text {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .resm-timeline {
+        margin-bottom: 5rem;
     }
 
     .about-center {

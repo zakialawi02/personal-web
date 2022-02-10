@@ -117,47 +117,6 @@ $(window).on('load', function () {
 });
 
 
-// gsap
-// gsap.from("header", {
-//   opacity: 0,
-//   duration: 1,
-//   delay: 1,
-//   y: -50
-// });
-// gsap.from(".home-text h3", {
-//   opacity: 0,
-//   duration: 1,
-//   delay: 1.5,
-//   y: -50
-// });
-// gsap.from(".home-text h1", {
-//   opacity: 0,
-//   duration: 1,
-//   delay: 2,
-//   y: -45
-// });
-// gsap.from(".home-text h4", {
-//   opacity: 0,
-//   duration: 1,
-//   delay: 2.5,
-//   y: -30
-// });
-// gsap.from(".home-text p", {
-//   opacity: 0,
-//   duration: 1,
-//   delay: 3,
-//   y: -20
-// });
-
-
-
-// // ================= Dark Mode
-// const chk = document.getElementById('chk');
-
-// chk.addEventListener('change', () => {
-//   document.body.classList.toggle('darkMode');
-// });
-
 let darkMode = localStorage.getItem("darkMode");
 
 function enableDarkMode() {
