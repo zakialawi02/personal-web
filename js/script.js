@@ -1,38 +1,38 @@
 // dont right click copy cut
-// $(document).bind('copy', function (e) {
-//   alert('Copy is not allowed !!!');
-//   e.preventDefault();
-// });
-// $(document).bind('paste', function () {
-//   alert('Paste is not allowed !!!');
-//   e.preventDefault();
-// });
-// $(document).bind('cut', function () {
-//   alert('Cut  is not allowed !!!');
-//   e.preventDefault();
-// });
-// $(document).bind('contextmenu', function (e) {
-//   alert('Right Click  is not allowed !!!');
-//   e.preventDefault();
-// });
-// // inspect not allowed
-// document.onkeydown = function (e) {
-//   if (event.keyCode == 123) {
-//     return false;
-//   }
-//   if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-//     alert('Function is not allowed !!!');
-//     return false;
-//   }
-//   if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-//     alert('Function is not allowed !!!');
-//     return false;
-//   }
-//   if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-//     alert('Function is not allowed !!!');
-//     return false;
-//   }
-// }
+$(document).bind('copy', function (e) {
+  alert('Copy is not allowed !!!');
+  e.preventDefault();
+});
+$(document).bind('paste', function () {
+  alert('Paste is not allowed !!!');
+  e.preventDefault();
+});
+$(document).bind('cut', function () {
+  alert('Cut  is not allowed !!!');
+  e.preventDefault();
+});
+$(document).bind('contextmenu', function (e) {
+  alert('Right Click  is not allowed !!!');
+  e.preventDefault();
+});
+// inspect not allowed
+document.onkeydown = function (e) {
+  if (event.keyCode == 123) {
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+    alert('Function is not allowed !!!');
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+    alert('Function is not allowed !!!');
+    return false;
+  }
+  if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+    alert('Function is not allowed !!!');
+    return false;
+  }
+}
 
 // /////////// Stiky Header  dan spanLogoBerubahWarna
 $(document).ready(function () {
@@ -115,6 +115,41 @@ $(window).on('load', function () {
   $(".preloader").delay(2000).fadeOut("slow");
 
 });
+
+// // ================= Dark Mode
+// const chk = document.getElementById('chk');
+
+// chk.addEventListener('change', () => {
+//   document.body.classList.toggle('darkMode');
+// });
+
+let darkMode = localStorage.getItem("darkMode");
+
+function enableDarkMode() {
+  document.body.classList.add("darkMode");
+  $('.darkModeToggle .D1').addClass('darkModeSimbol');
+  $('.darkModeToggle .D2').addClass('darkModeSimbol');
+  localStorage.setItem("darkMode", "enabled");
+}
+
+function disableDarkMode() {
+  document.body.classList.remove("darkMode");
+  $('.darkModeToggle .D1').removeClass('darkModeSimbol');
+  $('.darkModeToggle .D2').removeClass('darkModeSimbol');
+  localStorage.setItem("darkMode", null);
+}
+
+if (darkMode === "enabled") {
+  enableDarkMode();
+}
+// Listeners
+const darkModeToggle1 = document.querySelector("#darkModeToggle");
+darkModeToggle1.addEventListener("click", () => {
+  darkMode = localStorage.getItem("darkMode");
+  darkMode !== "enabled" ? enableDarkMode() : disableDarkMode();
+});
+
+// 
 
 //---------------------------- typingg....
 new TypeIt("#type1", {
@@ -212,141 +247,8 @@ gsap.from(".darkModeToggle", {
   x: 50
 });
 
-// ----------------------- Gallery filter
-//selecting all required elements
-const filterItem = document.querySelector(".items");
-const filterImg = document.querySelectorAll(".gallery .image");
 
-window.onload = () => { //after window loaded
-  filterItem.onclick = (selectedItem) => { //if user click on filterItem div
-    if (selectedItem.target.classList.contains("item")) { //if user selected item has .item class
-      filterItem.querySelector(".active").classList.remove("active"); //remove the active class which is in first item
-      selectedItem.target.classList.add("active"); //add that active class on user selected item
-      let filterName = selectedItem.target.getAttribute("data-name"); //getting data-name value of user selected item and store in a filtername variable
-      filterImg.forEach((image) => {
-        let filterImges = image.getAttribute("data-name"); //getting image data-name value
-        //if user selected item data-name value is equal to images data-name value
-        //or user selected item data-name value is equal to "all"
-        if ((filterImges == filterName) || (filterName == "all")) {
-          image.classList.remove("hide"); //first remove the hide class from the image
-          image.classList.add("show"); //add show class in image
-        } else {
-          image.classList.add("hide"); //add hide class in image
-          image.classList.remove("show"); //remove show class from the image
-        }
-      });
-    }
-  }
-  for (let i = 0; i < filterImg.length; i++) {
-    filterImg[i].setAttribute("onclick", "preview(this)"); //adding onclick attribute in all available images
-  }
-}
 
-//fullscreen image preview function
-//selecting all required elements
-const previewBox = document.querySelector(".preview-box"),
-  categoryName = previewBox.querySelector(".title p"),
-  previewImg = previewBox.querySelector("img"),
-  closeIcon = previewBox.querySelector(".icon"),
-  shadow = document.querySelector(".shadow");
-
-function preview(element) {
-  //once user click on any image then remove the scroll bar of the body, so user can't scroll up or down
-  document.querySelector("body").style.overflow = "hidden";
-  let selectedPrevImg = element.querySelector("img").src; //getting user clicked image source link and stored in a variable
-  let selectedImgCategory = element.getAttribute("data-name"); //getting user clicked image data-name value
-  previewImg.src = selectedPrevImg; //passing the user clicked image source in preview image source
-  categoryName.textContent = selectedImgCategory; //passing user clicked data-name value in category name
-  previewBox.classList.add("show"); //show the preview image box
-  shadow.classList.add("show"); //show the light grey background
-  closeIcon.onclick = () => { //if user click on close icon of preview box
-    previewBox.classList.remove("show"); //hide the preview box
-    shadow.classList.remove("show"); //hide the light grey background
-    document.querySelector("body").style.overflow = "auto"; //show the scroll bar on body
-  }
-  shadow.onclick = () => { //if user click on close icon of preview box
-    previewBox.classList.remove("show"); //hide the preview box
-    shadow.classList.remove("show"); //hide the light grey background
-    document.querySelector("body").style.overflow = "auto"; //show the scroll bar on body
-  }
-
-}
-// ------------------------- QUOTES
-const quoteText = document.querySelector(".quote"),
-  quoteBtn = document.querySelector("button"),
-  authorName = document.querySelector(".name"),
-  speechBtn = document.querySelector(".speech"),
-  copyBtn = document.querySelector(".copy"),
-  twitterBtn = document.querySelector(".twitter"),
-  synth = speechSynthesis;
-
-function randomQuote() {
-  quoteBtn.classList.add("loading");
-  quoteBtn.innerText = "Loading Quote...";
-  fetch("https://api.quotable.io/random").then(response => response.json()).then(result => {
-    quoteText.innerText = result.content;
-    authorName.innerText = result.author;
-    quoteBtn.classList.remove("loading");
-    quoteBtn.innerText = "New Quote";
-  });
-}
-
-speechBtn.addEventListener("click", () => {
-  if (!quoteBtn.classList.contains("loading")) {
-    let utterance = new SpeechSynthesisUtterance(`${quoteText.innerText} by ${authorName.innerText}`);
-    synth.speak(utterance);
-    setInterval(() => {
-      !synth.speaking ? speechBtn.classList.remove("active") : speechBtn.classList.add("active");
-    }, 10);
-  }
-});
-
-copyBtn.addEventListener("click", () => {
-  navigator.clipboard.writeText(quoteText.innerText);
-});
-
-twitterBtn.addEventListener("click", () => {
-  let tweetUrl = `https://twitter.com/intent/tweet?url=${quoteText.innerText}`;
-  window.open(tweetUrl, "_blank");
-});
-
-quoteBtn.addEventListener("click", randomQuote);
 
 //------------------ Working contact form
-// 
-
-
-// // ================= Dark Mode
-// const chk = document.getElementById('chk');
-
-// chk.addEventListener('change', () => {
-//   document.body.classList.toggle('darkMode');
-// });
-
-let darkMode = localStorage.getItem("darkMode");
-
-function enableDarkMode() {
-  document.body.classList.add("darkMode");
-  $('.darkModeToggle .D1').addClass('darkModeSimbol');
-  $('.darkModeToggle .D2').addClass('darkModeSimbol');
-  localStorage.setItem("darkMode", "enabled");
-}
-
-function disableDarkMode() {
-  document.body.classList.remove("darkMode");
-  $('.darkModeToggle .D1').removeClass('darkModeSimbol');
-  $('.darkModeToggle .D2').removeClass('darkModeSimbol');
-  localStorage.setItem("darkMode", null);
-}
-
-if (darkMode === "enabled") {
-  enableDarkMode();
-}
-// Listeners
-const darkModeToggle1 = document.querySelector("#darkModeToggle");
-darkModeToggle1.addEventListener("click", () => {
-  darkMode = localStorage.getItem("darkMode");
-  darkMode !== "enabled" ? enableDarkMode() : disableDarkMode();
-});
-
 // 
