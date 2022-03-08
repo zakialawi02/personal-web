@@ -19,9 +19,9 @@
         // $mail->Host = "mail.zakialawi.my.id";
         $mail->SMTPAuth = true;
         // $mail->Username =  "hallo@zakialawi.my.id";//"youremail@gmail.com"; //enter you email address
-        // $mail->Password = '123ewqasdxz'; //enter you email password
+        // $mail->Password = 'password'; //enter you email password
         $mail->Username =  "hallo@zakialawi.my.id";//"youremail@gmail.com"; //enter you email address
-        $mail->Password = '123ewqasdxz'; //enter you email password
+        $mail->Password = 'password'; //enter you email password
         $mail->Port = 465;
         $mail->SMTPSecure = "ssl";
 
